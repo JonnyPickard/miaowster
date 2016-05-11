@@ -41,6 +41,8 @@ class ImagesController < ApplicationController
     redirect_to '/images'
   end
 
+  private
+
   def image_params
     params.require(:image).permit(:title, :description, :picture)
   end

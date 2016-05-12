@@ -3,7 +3,10 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+
 require 'spec_helper'
+require 'test_helper'
+
 require 'capybara/rails'
 require 'rspec/rails'
 
@@ -20,5 +23,15 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
+  config.backtrace_exclusion_patterns = [
+    /\/lib\d*\/ruby\//,
+    /bin\//,
+    /gems/,
+    /spec\/spec_helper\.rb/,
+    /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]
+
   config.include Features, type: :feature
+
+  config.include FactoryGirl::Syntax::Methods
 end

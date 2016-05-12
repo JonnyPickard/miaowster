@@ -5,14 +5,14 @@ default: &default
 
 test:
   <<: *default
-  database: kitten_hub_test
+  database: miaowster_test
 
 development:
   <<: *default
-  database: kitten_hub_development
+  database: miaowster_development
 
 production:
   <<: *default
-  database: kitten_hub_production
-  username: kitten_hub
-  password: <%= ENV['KITTEN_HUB_DATABASE_PASSWORD'] %>
+  database: miaowster_production
+  username: miaowster
+  password: <%= ENV['MIAOWSTER_DATABASE_PASSWORD'] %>

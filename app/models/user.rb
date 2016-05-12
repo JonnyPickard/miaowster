@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :images, dependent: :destroy
 
+  validates :email, :password, :password_confirmation, presence: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          :omniauth_providers => [:facebook]

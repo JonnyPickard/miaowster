@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :image do
+  factory :image, :class => "Image" do
     sequence(:user_id) { |n| "user_id#{n}" }
     sequence(:title) { |n| "test_title#{n}" }
     sequence(:description) { |n| "test_description#{n}" }
@@ -7,8 +7,8 @@ FactoryGirl.define do
   end
 
   factory :user, :class => "User" do
-    email "test@test.com"
-    password "testpassword"
-    password_confirmation "testpassword"
+    sequence(:email) { |n| "test@test#{n}.com" }
+    sequence(:password) { |n| "testpassword#{n}" }
+    sequence(:password_confirmation) { |n| "testpassword#{n}" }
   end
 end

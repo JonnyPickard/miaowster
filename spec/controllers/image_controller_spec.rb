@@ -33,4 +33,24 @@ describe ImagesController do
       expect(response).to render_template(:"images/new")
     end
   end
+
+  describe "POST #create" do
+    login_user
+
+    context "image is successfully created" do
+      it "redirects to images/index" do
+        post :create, image: attributes_for(:image)
+
+        expect(response).to redirect_to images_path
+      end
+    end
+
+    context "image not created" do
+      it "rediects to images/new" do
+        post :create, image: { title: "Invalid" } #incorrect parameters
+
+        expect(response).to redirect_to new_image_path
+      end
+    end
+  end
 end

@@ -69,7 +69,7 @@ describe ImagesController do
     end
   end
 
-  describe "GET #edit" do
+  xdescribe "GET #edit" do
     login_user
 
     it "renders the edit page successfully" do
@@ -79,6 +79,19 @@ describe ImagesController do
 
       expect(response.status).to eq(200)
       expect(response).to render_template :edit
+    end
+  end
+
+  describe "PATCH #update" do
+    login_user
+
+    it "redirects to /images" do
+      image = create(:image)
+
+      patch :update, id: image.id, image: attributes_for(:image)
+
+      expect(response.status).to eq(302)
+      expect(response).to redirect_to images_path
     end
   end
 end

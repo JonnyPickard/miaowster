@@ -56,16 +56,29 @@ describe ImagesController do
     end
   end
 
-  describe "GET #show" do
+  xdescribe "GET #show" do
     login_user
 
-    it "redirects to image path" do
+    it "renders the show page successfully" do
       image = create(:image)
 
       get :show, id: image.id
 
       expect(response.status).to eq(200)
       expect(response).to render_template :show
+    end
+  end
+
+  describe "GET #edit" do
+    login_user
+
+    it "renders the edit page successfully" do
+      image = create(:image)
+
+      get :edit, id: image.id
+
+      expect(response.status).to eq(200)
+      expect(response).to render_template :edit
     end
   end
 end

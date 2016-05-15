@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to images_path, notice: 'Image was successfully uploaded.'
     else
-      redirect_to new_image_path
+      redirect_to new_image_path, notice: 'Sorry the Image could not be uploaded at this time.'
     end
   end
 

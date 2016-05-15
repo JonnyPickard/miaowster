@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe ImagesController do
-  describe "GET #index" do
+  xdescribe "GET #index" do
 
     context "when user is logged in" do
       login_user
@@ -23,7 +23,7 @@ describe ImagesController do
     end
   end
 
-  describe "GET #new" do
+  xdescribe "GET #new" do
     login_user
 
     it "renders the new image page successfully" do
@@ -34,13 +34,14 @@ describe ImagesController do
     end
   end
 
-  describe "POST #create" do
+  xdescribe "POST #create" do
     login_user
 
     context "image is successfully created" do
       it "redirects to images/index" do
         post :create, image: attributes_for(:image)
 
+        expect(flash[:notice]).to match(/^Image was successfully uploaded./)
         expect(response).to redirect_to images_path
       end
     end
@@ -49,8 +50,22 @@ describe ImagesController do
       it "rediects to images/new" do
         post :create, image: { title: "Invalid" } #incorrect parameters
 
+        expect(flash[:notice]).to match(/^Sorry the Image could not be uploaded at this time./)
         expect(response).to redirect_to new_image_path
       end
+    end
+  end
+
+  describe "GET #show" do
+    login_user
+
+    it "redirects to image path" do
+      image = create(:image)
+
+      get :show, id: image.id
+
+      expect(response.status).to eq(200)
+      expect(response).to render_template :show
     end
   end
 end

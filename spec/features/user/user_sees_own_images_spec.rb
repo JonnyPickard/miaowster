@@ -5,11 +5,12 @@ feature "User sees own images" do
     sign_in
 
     create_image
+    image = Image.first
 
     click_link "Test"
 
     expect(page).to have_content "Test"
-    expect(current_path).to eq "/images/4"
+    expect(current_path).to eq image_path(image)
   end
 end
 

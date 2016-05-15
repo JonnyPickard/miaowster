@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe ImagesController do
-  xdescribe "GET #index" do
+  describe "GET #index" do
 
     context "when user is logged in" do
       login_user
@@ -23,7 +23,7 @@ describe ImagesController do
     end
   end
 
-  xdescribe "GET #new" do
+  describe "GET #new" do
     login_user
 
     it "renders the new image page successfully" do
@@ -34,7 +34,7 @@ describe ImagesController do
     end
   end
 
-  xdescribe "POST #create" do
+  describe "POST #create" do
     login_user
 
     context "image is successfully created" do
@@ -56,7 +56,7 @@ describe ImagesController do
     end
   end
 
-  xdescribe "GET #show" do
+  describe "GET #show" do
     login_user
 
     it "renders the show page successfully" do
@@ -69,7 +69,7 @@ describe ImagesController do
     end
   end
 
-  xdescribe "GET #edit" do
+  describe "GET #edit" do
     login_user
 
     it "renders the edit page successfully" do
@@ -89,6 +89,19 @@ describe ImagesController do
       image = create(:image)
 
       patch :update, id: image.id, image: attributes_for(:image)
+
+      expect(response.status).to eq(302)
+      expect(response).to redirect_to images_path
+    end
+  end
+
+  describe "DELETE #destroy" do
+    login_user
+
+    it "redirects to /images" do
+      image = create(:image)
+
+      delete :destroy, id: image.id
 
       expect(response.status).to eq(302)
       expect(response).to redirect_to images_path

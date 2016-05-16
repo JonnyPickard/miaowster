@@ -1,4 +1,8 @@
-<p><%= @image.title %></p>
-<%= image_tag @image.picture.url(:medium) %>
-<p><%= @image.description %></p>
-<a href="/images">Back</a>
+<h2><b><%= @image.title %></b></h2>
+
+<div class="show-image">
+  <%= image_tag @image.picture.url(:medium) %>
+  <h3>
+    <%= @image.description %>
+  </h3>
+</div>

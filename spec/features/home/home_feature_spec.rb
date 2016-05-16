@@ -4,7 +4,7 @@ feature "User can view home page" do
   scenario "No pictures have been uploaded" do
     sign_in
 
-    click_link "Home"
+    click_link "Trending"
 
     expect(current_path).to eq(home_index_path)
     expect(page).to have_content("No pictures have been uploaded yet!")

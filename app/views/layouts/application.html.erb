@@ -7,16 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>Miaowster</h1>
+  <h4 class="signed-in-navbar">
+    <% if user_signed_in? %>
+      <%= link_to "Trending", home_index_path %>
+      <%= link_to "Your images", images_path %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </h4>
+
+  <h1 id="title">Miaowster</h1>
 
   <p class="alert"><%= alert %></p>
 
   <%= notice %>
   <%= yield %>
 
-  <% if user_signed_in? %>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <%= link_to "Home", home_index_path %>
-  <% end %>
 </body>
 </html>

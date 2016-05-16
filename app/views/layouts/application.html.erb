@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KittenHub</title>
+  <title>Miaowster</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,6 +16,7 @@
 
   <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Home", home_index_path %>
   <% end %>
 </body>
 </html>

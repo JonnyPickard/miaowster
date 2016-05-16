@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :images
 
+  resources :home, only: [:index]
 end

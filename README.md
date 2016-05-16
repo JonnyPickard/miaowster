@@ -6,6 +6,8 @@ Miaowster
 
 This project started life as a build Instagram challenge using Ruby on Rails which can be found [here.](https://github.com/JonnyPickard/instagram-challenge-rails)
 
+The current version on heroku: [Miaowster](http://miaowster.herokuapp.com)
+
 User Stories
 ------------
 ```

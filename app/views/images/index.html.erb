@@ -11,7 +11,11 @@
         <%= image.description %>
       </h3>
       <%= image_tag image.picture.url(:medium) %>
+      <h3>
+        <%= pluralize image.endorsements.count, "endorsements" %>
+      </h3>
       <h4>
+        <%= link_to "Endorse Image #{image.id}", image_endorsements_path(image), method: :post %>
         <%= link_to "Edit #{image.title}", edit_image_path(image) %>
         <%= link_to "Delete #{image.title}", image_path(image), method: :delete %>
       </h4>

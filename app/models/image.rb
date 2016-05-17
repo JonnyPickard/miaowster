@@ -1,7 +1,9 @@
 class Image < ActiveRecord::Base
   belongs_to :user
 
-  validates :user_id, :title, :description, presence: true 
+  has_many :endorsements
+
+  validates :user_id, :title, :description, presence: true
 
   validates :picture,
     attachment_content_type: { content_type: /\Aimage\/.*\Z/ },

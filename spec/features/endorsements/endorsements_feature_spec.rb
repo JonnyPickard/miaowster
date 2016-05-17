@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 feature "Edorsing Images" do
-  xscenario "A user can endorse an image, which updates the image endorsement count" do
+
+  before(:each) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  scenario "A user can endorse an image, which updates the image endorsement count" do
     sign_in
     create_image
 

@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
   belongs_to :user
 
-  has_many :endorsements
+  has_many :endorsements, dependent: :destroy
 
   validates :user_id, :title, :description, presence: true
 

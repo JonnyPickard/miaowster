@@ -10,6 +10,8 @@ feature "Edorsing Images" do
     sign_in
     create_image
 
+    visit "home"
+
     click_link "Endorse Image 1"
 
     expect(page).to have_content("1 endorsement")
@@ -18,6 +20,8 @@ feature "Edorsing Images" do
   scenario "A user can only endorse an image once" do
     sign_in
     create_image
+
+    visit "home"
 
     click_link "Endorse Image 1"
     click_link "Endorse Image 1"

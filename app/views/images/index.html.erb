@@ -1,4 +1,4 @@
-<h2>Your pictures</h2>
+<h2>Your Images</h2>
 <%= link_to "Upload an image", new_image_path %>
 
 <div class="images">
@@ -7,15 +7,16 @@
       <h2 class="image-title">
         <%= link_to image.title, image_path(image) %>
       </h2>
+      <div class="picture">
+        <%= image_tag image.picture.url(:medium) %>
+      </div>
       <h3 class="image-description">
         <%= image.description %>
       </h3>
-      <%= image_tag image.picture.url(:medium) %>
       <h3>
         <%= pluralize image.endorsements.count, "endorsements" %>
       </h3>
       <h4>
-        <%= link_to "Endorse Image #{image.id}", image_endorsements_path(image), method: :post %>
         <%= link_to "Edit #{image.title}", edit_image_path(image) %>
         <%= link_to "Delete #{image.title}", image_path(image), method: :delete %>
       </h4>

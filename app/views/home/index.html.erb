@@ -12,7 +12,7 @@
         <%= pluralize image.endorsements.count, "endorsements" %>
       </h3>
       <h4>
-        <%= link_to "Endorse Image #{image.id}", image_endorsements_path(image), method: :post %>
+        <%= link_to "Endorse Image", image_endorsements_path(image), method: :post, id: "endorse_#{image.id}" %>
       </h4>
     <% end %>
   <% else %>

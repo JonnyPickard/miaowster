@@ -12,7 +12,7 @@ feature "Edorsing Images" do
 
     visit "home"
 
-    click_link "Endorse Image 1"
+    find("#endorse_1").click
 
     expect(page).to have_content("1 endorsement")
   end
@@ -23,8 +23,8 @@ feature "Edorsing Images" do
 
     visit "home"
 
-    click_link "Endorse Image 1"
-    click_link "Endorse Image 1"
+    find("#endorse_1").click
+    find("#endorse_1").click
 
     expect(page).to have_content("1 endorsement")
   end

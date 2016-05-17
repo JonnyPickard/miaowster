@@ -11,4 +11,8 @@ FactoryGirl.define do
     sequence(:password) { |n| "testpassword#{n}" }
     sequence(:password_confirmation) { |n| "testpassword#{n}" }
   end
+
+  factory :endorsement, :class => "Endorsement" do
+    association :image, factory: :image
+  end
 end

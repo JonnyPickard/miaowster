@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :images do
     resources :endorsements, only: [:index, :create]
+    resources :comments, only: [:new, :create, :index, :destroy]
   end
 
   resources :home, only: [:index]

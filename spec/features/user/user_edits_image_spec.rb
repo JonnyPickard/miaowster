@@ -8,7 +8,7 @@ feature "User edits image" do
 
     click_link "Edit Test"
     fill_in "Title", with: "Miaowster"
-    click_button "Update"
+    click_button "Upload"
 
     expect(page).to have_content "Miaowster"
     expect(current_path).to eq "/images"

@@ -1,7 +1,5 @@
-<% Comment.where(image_id: image.id).each do | comment | %>
-<ul>
-  <li>
+<% image.comments.each do | comment | %>
+  <p>
     <%= comment.content %>
-  </li>
-</ul>
+  </p>
 <% end %>

@@ -6,6 +6,9 @@ gem 'devise'
 gem 'aws-sdk', '<2.0'
 gem 'paperclip'
 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 gem 'rails', '4.2.5.2'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'

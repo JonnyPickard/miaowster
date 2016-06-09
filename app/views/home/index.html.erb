@@ -6,7 +6,7 @@
       <% if @images.any? %>
         <% @images.each do | image | %>
         <div class="images">
-          <h2>
+          <h2 id="image-title">
             <%= link_to image.title, image_path(image) %>
           </h2>
           <div id="image">
@@ -16,7 +16,7 @@
             <%= image.description %>
           </h3>
           <h3>
-            <%= pluralize image.endorsements.count, "endorsements" %>
+            <%= image.endorsements.count %><span class="glyphicon glyphicon-thumbs-up"></span>
           </h3>
           <h4>
             <%= link_to "Endorse Image", image_endorsements_path(image), method: :post, id: "endorse_#{image.id}" %>

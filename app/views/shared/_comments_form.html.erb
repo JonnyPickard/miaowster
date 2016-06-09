@@ -1,6 +1,10 @@
-<%= form_for ([image, @comment]) do | f |  %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <%= f.hidden_field :image_id, value: image.id %>
-  <%= f.submit :submit %>
-<% end %>
+<div class="comment-form">
+  <p>
+    <%= form_for ([image, @comment]) do | f |  %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <%= f.hidden_field :image_id, value: image.id %>
+    <%= f.submit :submit %>
+    <% end %>  
+  </p>
+</div>

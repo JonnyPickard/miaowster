@@ -1,3 +1,33 @@
+#main-body {
+  font-family: 'Pacifico', cursive;
+}
+
+#image {
+  border-radius: 10px;
+}
+
 .body-content {
   text-align: center;
+}
+
+.comments {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.images {
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-style: line;
+  border-color: black;
+}
+
+#line {
+  width: 50px;
+  background-color: black;
 }

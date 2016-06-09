@@ -1,5 +1,8 @@
-<% image.comments.each do | comment | %>
+<div id="comments-display">
+  <% image.comments.each do | comment | %>
   <p>
     <%= comment.content %>
+      <hr id="line"/>
   </p>
-<% end %>
+  <% end %>
+</div>

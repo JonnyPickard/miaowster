@@ -1,27 +1,40 @@
-<h2>Trending</h2>
+<div class="container">
+  <div class="jumbotron" id="image-comments">
+    <h2>Trending</h2>
 
-<div class="trending-images">
-  <% if @images.any? %>
-    <% @images.each do | image | %>
-      <h2>
-        <%= link_to image.title, image_path(image) %>
-      </h2>
-      <%= image_tag image.picture.url(:medium) %>
-      <h3 class="image-description">
-        <%= image.description %>
-      </h3>
-      <h3>
-        <%= pluralize image.endorsements.count, "endorsements" %>
-      </h3>
-      <h4>
-        <%= link_to "Endorse Image", image_endorsements_path(image), method: :post, id: "endorse_#{image.id}" %>
-      </h4>
-      <h4 class="comments">
-        <%= render "shared/comments", :image => image %>
-        <%= render "shared/comments_form", :image => image %>
-      </h4>
-    <% end %>
-  <% else %>
-    <%= "No pictures have been uploaded yet!" %>
-  <% end %>
+    <div class="trending-images">
+      <% if @images.any? %>
+        <% @images.each do | image | %>
+        <div class="images">
+          <h2>
+            <%= link_to image.title, image_path(image) %>
+          </h2>
+          <div id="image">
+            <%= image_tag image.picture.url(:medium) %>
+          </div>
+          <h3 class="image-description">
+            <%= image.description %>
+          </h3>
+          <h3>
+            <%= pluralize image.endorsements.count, "endorsements" %>
+          </h3>
+          <h4>
+            <%= link_to "Endorse Image", image_endorsements_path(image), method: :post, id: "endorse_#{image.id}" %>
+          </h4>
+          <h4 class="comments">
+            <p>
+              <%= render "shared/comments", :image => image %>
+              <%= render "shared/comments_form", :image => image %>
+            </p>
+          </h4>
+        </div>
+        <% end %>
+      <% else %>
+        <%= "No pictures have been uploaded yet!" %>
+      <% end %>
+      <p>
+        <hr id="line"/>
+      </p>
+    </div>
+  </div>
 </div>

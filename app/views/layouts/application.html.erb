@@ -29,6 +29,7 @@
             <% if user_signed_in? %>
               <li><%= link_to "Trending", home_index_path %></li>
               <li><%= link_to "Your images", images_path %></li>
+              <li><%= link_to "Upload an image", new_image_path %></li>
               <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
             <% end %>
 

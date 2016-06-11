@@ -8,6 +8,11 @@ This project started life as a build Instagram challenge using Ruby on Rails whi
 
 The current version on heroku: [Miaowster](http://miaowster.herokuapp.com)
 
+Screenshots
+-----------
+
+<img src="https://github.com/JonnyPickard/screenshots/blob/master/miaowster/miaowster_trending.png">
+
 User Stories
 ------------
 ```

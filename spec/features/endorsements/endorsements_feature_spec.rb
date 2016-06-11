@@ -12,9 +12,10 @@ feature "Edorsing Images" do
 
     visit "home"
 
+    expect(page).not_to have_content("1")
     find("#endorse_1").click
 
-    expect(page).to have_content("1 endorsement")
+    expect(page).to have_content("1")
   end
 
   scenario "A user can only endorse an image once" do
@@ -26,6 +27,6 @@ feature "Edorsing Images" do
     find("#endorse_1").click
     find("#endorse_1").click
 
-    expect(page).to have_content("1 endorsement")
+    expect(page).to have_content("1")
   end
 end

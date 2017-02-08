@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'omniauth-facebook'
 gem 'devise'
 
-gem 'aws-sdk', '~> 2.3.0'
+gem 'aws-sdk'
 gem 'paperclip'
 
 gem 'bootstrap-sass'

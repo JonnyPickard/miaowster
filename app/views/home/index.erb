@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="jumbotron" id="image-comments">
+<div class="container" style="padding:5px;">
+  <div class="jumbotron" id="image-comments" style="padding:5px;">
     <h2>Trending</h2>
 
-    <div class="trending-images">
+    <div class="trending-images" style="text-align:center;">
       <% if @images.any? %>
         <% @images.each do | image | %>
         <div class="images">
@@ -10,7 +10,7 @@
             <%= link_to image.title, image_path(image) %>
           </h2>
           <div id="image">
-            <%= image_tag image.picture.url(:medium) %>
+            <%= image_tag image.picture.url(:medium), style: "border:1px solid;padding:1px;border-radius:5%;" %>
           </div>
           <h3 class="image-description">
             <%= image.description %>

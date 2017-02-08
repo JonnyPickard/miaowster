@@ -10,10 +10,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="main-body">
+<body id="page">
   <div class="navbar navbar-default navbar-static-top" id="nav-color">
     <div class="container">
-
       <div class="navbar-brand" id="nav-title">Miaowster</div>
 
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
@@ -23,7 +22,6 @@
       </button>
 
         <div class="collapse navbar-collapse navHeaderCollapse">
-
           <ul class="nav navbar-nav navbar-right">
 
             <% if user_signed_in? %>
@@ -34,20 +32,20 @@
             <% end %>
 
           </ul>
-
         </div>
       </div>
-
     </div>
   </div>
-
-  <p class="alert"><%= alert %></p>
-
-  <%= notice %>
-
-  <div class="container">
-    <%= yield %>
+  <div class="container container-fluid">
+    <p class="alert">
+      <%= alert %>
+    </p>
+    <p>
+      <%= notice %>
+    </p>
+    <div class="col-md">
+      <%= yield %>
+    </div>
   </div>
-
 </body>
 </html>

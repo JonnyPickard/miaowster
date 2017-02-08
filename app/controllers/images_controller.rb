@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.user_id = current_user.id
-    if @image.save
+    if @image.save!
       redirect_to images_path, notice: 'Image was successfully uploaded.'
     else
       redirect_to new_image_path, notice: 'Sorry the Image could not be uploaded at this time.'

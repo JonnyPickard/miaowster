@@ -20,14 +20,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-rails', "~> 2.3.0"
 
 group :test do
-	gem 'capybara'
-	gem 'database_cleaner'
-	gem 'factory_girl_rails'
-	gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
-	gem 'rspec-rails'
+  gem 'rspec-rails'
   gem 'byebug'
 end
 

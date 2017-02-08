@@ -7,6 +7,6 @@ describe Image, ".picture" do
 
     #exercise and verify
     expect(image.picture_file_name).to eq "test.jpg"
-    expect(image.picture_content_type).to eq "image/jpg"
+    expect(image.picture_content_type).to eq "image/jpeg"
   end
 end

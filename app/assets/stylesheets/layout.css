@@ -1,22 +1,13 @@
 #main-body {
   font-family: 'Pacifico', cursive;
-  text-align: center;
 }
 
 #image-title {
   padding: 20px
 }
 
-.upload-image-form {
-  text-align: center;
-}
-
 #image {
   border-radius: 10px;
-}
-
-.body-content {
-  text-align: center;
 }
 
 .comments {

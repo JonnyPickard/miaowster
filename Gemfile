@@ -3,13 +3,14 @@ source 'https://rubygems.org'
 gem 'omniauth-facebook'
 gem 'devise'
 
-gem 'aws-sdk', '<2.0'
+gem 'aws-sdk', '~> 2.3.0'
 gem 'paperclip'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'bootstrap_form'
 
-gem 'rails', '4.2.5.2'
+gem 'rails'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'

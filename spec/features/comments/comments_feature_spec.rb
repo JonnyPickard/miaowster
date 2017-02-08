@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 feature "Commenting on an image" do
   before(:each) do
     DatabaseCleaner.clean_with(:truncation)
@@ -10,9 +9,7 @@ feature "Commenting on an image" do
     create_image
 
     click_link "Trending"
-
     fill_in "Content", with: "Excellent"
-    # byebug
     click_button "submit"
 
     expect(page).to have_content "Excellent"

@@ -8,6 +8,31 @@ This project started life as a build Instagram challenge using Ruby on Rails whi
 
 The current version on heroku: [Miaowster](http://miaowster.herokuapp.com)
 
+Installation
+------------
+##### Requirements
+
+- Ruby/ RVM
+- Rails
+- Bundler
+- ImageMagicks
+- postgresql  
+
+##### To Install
+1. Open up terminal and clone this repository
+2. `cd` into the directory
+3. Run `rake db:create`
+4. Run `rake db:migrate`
+5. Run `rails s`
+6. Go to http://localhost:3000 in a browser to view
+
+##### To Test
+1. Open up terminal and clone this repository
+2. `cd` into the directory
+3. Run `rake db:create`
+4. Run `rake db:migrate`
+5. Run `rspec`
+
 Screenshots
 -----------
 
